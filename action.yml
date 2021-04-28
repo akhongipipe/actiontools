@@ -17,3 +17,4 @@ runs:
   using: "composite"
   steps:
     - run: csdassets\csdassets merge -csd ${{ inputs.csd }} -csf ${{ inputs.csf }} -csl ${{ inputs.csl }} -csg ${{ inputs.csg }}
+      shell: cmd
