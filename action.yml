@@ -5,22 +5,16 @@ inputs:
     description: 'path/to/csd/file'
     required: true
   csf:
-    description: 'path/to/csf/ folder for Screens assets'
+    description: 'path/to/csf folder for Screens assets'
     required: true
   csl:
-    description: 'path/to/csl/ folder for Lists assets'
+    description: 'path/to/csl folder for Lists assets'
     required: true
   csg:
-    description: 'path/to/csg/ folder for GridColumns assets'
+    description: 'path/to/csg folder for GridColumns assets'
     required: true
 runs:
   using: "composite"
   steps:
-    - run: echo ${{ github.action_path }}
-      shell: cmd
-    - run: dir ${{ github.action_path }}
-      shell: cmd
-    - run: dir .
-      shell: cmd
     - run: ${{ github.action_path }}\csdassets\csdassets merge -csd ${{ inputs.csd }} -csf ${{ inputs.csf }} -csl ${{ inputs.csl }} -csg ${{ inputs.csg }}
       shell: cmd
