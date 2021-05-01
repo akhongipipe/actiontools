@@ -16,5 +16,11 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - run: csdassets\csdassets merge -csd ${{ inputs.csd }} -csf ${{ inputs.csf }} -csl ${{ inputs.csl }} -csg ${{ inputs.csg }}
+    - run: echo ${{ github.action_path }}
+      shell: cmd
+    - run: dir ${{ github.action_path }}
+      shell: cmd
+    - run: dir .
+      shell: cmd
+    - run: ${{ github.action_path }}\csdassets\csdassets merge -csd ${{ inputs.csd }} -csf ${{ inputs.csf }} -csl ${{ inputs.csl }} -csg ${{ inputs.csg }}
       shell: cmd
